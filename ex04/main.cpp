@@ -2,6 +2,8 @@
 #include <iostream>
 #include <string>
 
+//todo: multiple per line?
+
 int main(int argc, char *argv[]) {
 	if (argc < 4)
 		return 1;
