@@ -19,7 +19,7 @@ $(NAME): $(OBJ)
 %.o: %.cpp
 	$(CC) $(FLAGS) -c $^ -o $@
 
-test: test1 test2
+test: test1 test2 test3 test4 test5
 
 test1:
 	./ft_sed main.cpp a b
@@ -27,6 +27,17 @@ test1:
 
 test2:
 	./ft_sed main.cpp ai bla
+	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+
+test3:
+	./ft_sed main.cpp a "" 
+	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+
+test4:
+	./ft_sed main.cpp "" bla || true
+
+test5:
+	./ft_sed main.cpp a aa
 	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
 
 clean:
