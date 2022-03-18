@@ -9,13 +9,31 @@ else
 	FLAGS = -Wall -Wextra -Werror
 endif
 
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-fclean:
+%.o: %.cpp
+	$(CC) $(FLAGS) -c $^ -o $@
+
+test: test1 test2
+
+test1:
+	./ft_sed main.cpp a b
+	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+
+test2:
+	./ft_sed main.cpp ai bla
+	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-.PHONY: all 
+.PHONY: all clean fclean re test test1 test2
