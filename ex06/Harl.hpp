@@ -1,6 +1,6 @@
 #include <string>
 
-class Karen {
+class Harl {
 	public:
 		void complain(std::string level);
 	private:

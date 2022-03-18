@@ -12,7 +12,7 @@ enum level_e {
 
 int main(int argc, char **argv) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	Karen karen;
+	Karen harl;
 	std::string level_str;
 
 	enum level_e level = NONE;
@@ -33,19 +33,19 @@ int main(int argc, char **argv) {
 		break;
 	case DEBUG:
 		std::cout << "[ " << "DEBUG" << " ]" << std::endl;
-		karen.complain("DEBUG");
+		harl.complain("DEBUG");
 		std::cout << std::endl;
 	case INFO:
 		std::cout << "[ " << "INFO" << " ]" << std::endl;
-		karen.complain("INFO");
+		harl.complain("INFO");
 		std::cout << std::endl;
 	case WARNING:
 		std::cout << "[ " << "WARNING" << " ]" << std::endl;
-		karen.complain("WARNING");
+		harl.complain("WARNING");
 		std::cout << std::endl;
 	case ERROR:
 		std::cout << "[ " << "ERROR" << " ]" << std::endl;
-		karen.complain("ERROR");
+		harl.complain("ERROR");
 		std::cout << std::endl;
 	}
 }
