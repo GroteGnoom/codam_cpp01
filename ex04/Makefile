@@ -47,4 +47,4 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-.PHONY: all clean fclean re test test1 test2
+.PHONY: all clean fclean re test test1 test2 test3 test4 test5

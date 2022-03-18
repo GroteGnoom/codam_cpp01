@@ -1,5 +1,6 @@
-NAME = karen
-SRC = main.cpp Karen.cpp
+NAME = harl
+SRC = main.cpp Harl.cpp
+INC = Harl.hpp
 
 ifdef DEBUG
 	CC=clang++
@@ -9,13 +10,21 @@ else
 	FLAGS = -Wall -Wextra -Werror
 endif
 
+OBJ = $(SRC:.cpp=.o)
+
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
-fclean:
+%.o: %.cpp $(INC)
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-.PHONY: all
+.PHONY: all clean fclean re
