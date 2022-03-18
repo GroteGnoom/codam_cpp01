@@ -21,24 +21,28 @@ $(NAME): $(OBJ)
 
 test: test1 test2 test3 test4 test5
 
-test1:
-	./ft_sed main.cpp a b
+test1: $(NAME)
+	./$(NAME) main.cpp a b
 	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+	rm main.cpp.replace
 
-test2:
-	./ft_sed main.cpp ai bla
+test2: all
+	./$(NAME) main.cpp ai bla
 	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+	rm main.cpp.replace
 
 test3:
-	./ft_sed main.cpp a "" 
+	./$(NAME) main.cpp a ""
 	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+	rm main.cpp.replace
 
 test4:
-	./ft_sed main.cpp "" bla || true
+	./$(NAME) main.cpp "" bla || true
 
 test5:
-	./ft_sed main.cpp a aa
+	./$(NAME) main.cpp a aa
 	diff -u main.cpp main.cpp.replace | ~/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
+	rm main.cpp.replace
 
 clean:
 	rm -f $(OBJ)
