@@ -1,4 +1,4 @@
-NAME = karenFilter
+NAME = harlFilter
 SRC = main.cpp Karen.cpp
 
 ifdef DEBUG
