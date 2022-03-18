@@ -33,7 +33,7 @@ int main(int argc, char *argv[]) {
 			pos = line.find(from, pos);
 			if (pos != std::string::npos) {
 				line = line.substr(0, pos) + to + line.substr(pos + from.size(), line.size());
-				pos++;
+				pos += to.size();
 			} else
 				out << line << std::endl;
 		}
