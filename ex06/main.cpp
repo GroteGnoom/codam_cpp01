@@ -1,4 +1,4 @@
-#include "Karen.hpp"
+#include "Harl.hpp"
 #include <iostream>
 #include <string>
 
@@ -12,14 +12,14 @@ enum level_e {
 
 int main(int argc, char **argv) {
 	std::string levels[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-	Karen harl;
+	Harl harl;
 	std::string level_str;
 
 	enum level_e level = NONE;
 
 	if (argc != 2)
 	{
-		std::cout << "The Karen filter requires 1 argument" << std::endl;
+		std::cout << "The Harl filter requires 1 argument" << std::endl;
 		return (1);
 	}
 	level_str = argv[1];

@@ -1,5 +1,5 @@
 NAME = harlFilter
-SRC = main.cpp Karen.cpp
+SRC = main.cpp Harl.cpp
 
 ifdef DEBUG
 	CC=clang++
